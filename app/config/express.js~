@@ -52,6 +52,6 @@ module.exports = function(){
 	
 	//set the static content here, this is under routes for performance purposes
 	//app.use();
-	
+	return app;
 };
 
