@@ -1,4 +1,8 @@
 /**
+
+	NB Start commenting all the code that is in use. keep it up to date
+		This is important as the code will be part of the evaluation
+
 	This file imports all the required libraries 
 	and sets up express so as to bring all the seperate elements together.
 	required libraries that should be started with:
