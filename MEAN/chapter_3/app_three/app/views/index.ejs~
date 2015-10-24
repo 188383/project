@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+	</head>
+	<body>
+		
+		<h1><%= title %> </h1>
+		<img src="img/image.jpg">
+		<h3><%= subtitle %></h3>
+	</body>
+	
+</html>

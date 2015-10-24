@@ -1,0 +1,14 @@
+{
+	"name":"MEAN",
+	"version":"1.0.0",
+	"dependencies":{
+		"express":"latest",
+		"morgan":"latest",
+		"compression":"latest",
+		"body-parser":"latest",
+		"method-override":"latest",
+		"express-session":"1.11.3",
+		"ejs":"2.3.4",
+		"mongodb":"~3.0.0"
+	}
+}

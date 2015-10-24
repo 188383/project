@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "The base of the website",
+  "dependencies":{
+		"express":"latest",
+		"morgan":"latest",
+		"compression":"latest",
+		"body-parser":"latest",
+		"method-override":"latest",
+		"express-session":"1.11.3",
+		"ejs":"2.3.4",
+		"mongodb":"~2.0.0",
+		"mongoose":"latest"
+	},
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
