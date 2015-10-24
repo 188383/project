@@ -1,9 +1,0 @@
-body{
-	text-align:center;
-	background-color:silver;
-}
-
-img{
-	width:100px;
-	height:100px;
-}

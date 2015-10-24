@@ -1,3 +1,0 @@
-//management of configuration files being loaded
-//this file just loads the current environment which is named in env
-module.exports = require('./env/' + process.env.NODE_ENV + '.js');
