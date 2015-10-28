@@ -21,10 +21,16 @@ var config = require('./config'),
 	
 	module.exports = function(){
 	var db = mongoose.connect(config.db);
-	require(../../app/models/users.server.models.js);
+	require(../app/models/users.server.models.js);
 	
 	return db;
 }
 */
 
+module.exports = function(){
+	var db = mongoose.connect(config.db);
+	require('../models/users.server.model');
+	
+	return db
+};
 

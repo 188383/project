@@ -18,5 +18,6 @@ var mongoose = require('./config/mongoose'),
 
 var app = express();
 app.listen(4500);
+console.log("server started");
 //Remember to export the app
 module.exports = app

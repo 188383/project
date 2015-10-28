@@ -26,4 +26,3 @@ var UserSchema = new Schema({
 /**export the schema, so that other parts of the application can make use of it
 */
 mongoose.model('User',UserSchema);
-

@@ -7,5 +7,6 @@
 		
 */
 module.exports = {
-
-}
+	db:'mongodb://localhost/test',
+	sessionKey:"SessionKey"
+};

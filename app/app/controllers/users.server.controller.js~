@@ -7,7 +7,7 @@
 
 exports.list = function(req,res,next){
 	var users = ["John","James","Jan","Jannie"];
-	
-	res.send(users);
-
+	//remember to use methods such as .json()...
+	res.json(req.params);
 };
+

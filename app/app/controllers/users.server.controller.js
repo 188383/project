@@ -8,6 +8,6 @@
 exports.list = function(req,res,next){
 	var users = ["John","James","Jan","Jannie"];
 	//remember to use methods such as .json()...
-	res.send(users);
-
+	res.json(req.params);
 };
+
