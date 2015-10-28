@@ -1,31 +1,117 @@
 \documentclass[11pt]{beamer}
 \usetheme{Warsaw}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\author{Paweł Otrębski}
-\title{Engineering Thesis}
+\author{
+	Author:Paweł Otrębski \and \\
+	 Supervisor: Dr Wojciech Macyna
+}
+\title{Web based Estate Agent}
+
 %\setbeamercovered{transparent} 
 %\setbeamertemplate{navigation symbols}{} 
 %\logo{} 
-%\institute{} 
-%\date{} 
-%\subject{} 
+\institute{Wroclaw University of Technology} 
+\date{} 
+\subject{Undergraduate Project} 
 \begin{document}
 
-\begin{frame}
+\begin{frame}{}
 \titlepage
 \end{frame}
 
-%\begin{frame}
-%\tableofcontents
-%\end{frame}
+\begin{frame}
+\tableofcontents
+\end{frame}
 
-\begin{frame}{•}
+\begin{frame}{Introduction}
+% This is the introductory frame, that explains the aim
+% of the project, what it is that we are trying to achieve 
+% note speak of the need to verify 
+\begin{flushleft}
+\textbf{Aim}\\
+\pause
+\begin{itemize}
+	\item Advertise sundry living space
+	\pause
+	\item Expose offers to users
+	\pause
+	\item Rudimentary management for clients and admins 
+	\pause
+	\begin{itemize}
+		\item bookings 
+		\item confirmations
+		\item cancellations
+	\end{itemize}
+	\pause
+	\item Rate experience minimize/mitigate spamming
+	\pause
+	\item API that is front end agnostic
+\end{itemize}
+\end{flushleft}
+\end{frame}
 
+\begin{frame}{Motivation}
+	\begin{flushleft}
+	\textbf{Key motivations}
+	\begin{itemize}
+		\item sorting by price %watch out for 'sorting' questions
+		\item avoid formal accommodation services
+		\item build a personal relationship
+		\item client feedback
+		\item rate a client
+	\end{itemize}
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{Users and Use cases}
+	\begin{figure}
+		\includegraphics[scale=0.2]{../img/updated_use_case.jpg} 
+		\caption{use case diagram in UML}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Database Design}
+%explain the problems about the database design 
+%Mongo and it's advtanges and major disadvantages
+\begin{figure}
+\includegraphics[scale=0.3]{../img/drawing.jpg} 
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Architecture}
+\begin{flushleft}
+	\textbf{Two Tiered Architecture(hopefully three)}
+		\begin{itemize}
+			\pause
+			\item Database server
+			\pause
+			\item application server and WWW server
+			%note a question on why not three tiered
+			%advantages of three tiered architecture
+		\end{itemize}
+	\textbf{Design Patterns}
+	\begin{itemize}
+		\pause
+		\item Model-View-Controller(MVC)
+		\pause
+		\item underlying design patterns thanks to framework
+		%explain why MVC 		
+	\end{itemize}
+	\textbf{Protocols and format}
+	\begin{itemize}
+		\pause
+		\item \textbf{Re}presentational \textbf{S}tate \textbf{T}ransfer%explain that HTTP is used and why not soap
+		\item HTTP(S) as the message exchange protocol  
+		
+	\end{itemize}
+\end{flushleft}
 \end{frame}
 
 \end{document}
