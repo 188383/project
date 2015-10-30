@@ -53,7 +53,10 @@ module.exports = function(){
 	//set the routing mechanism, this is modular so that angular can easily plug in angular
 	//note this calls the route context and passes instance of app into it.
 	require('../app/routes/users.server.routes.js')(app);
-	
+	require('../app/routes/bookings.server.routes.js')(app);
+	require('../app/routes/rooms.server.routes.js')(app);
+	require('../app/routes/profile.server.routes.js')(app);
+	require('../app/routes/index.server.routes.js')(app);
 	//set the static content here, this is under routes for performance purposes
 	//app.use();
 	return app;

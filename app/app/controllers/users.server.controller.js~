@@ -5,9 +5,11 @@
 	NB: Remember to import the model that is created
 **/
 
-exports.list = function(req,res,next){
-	var users = ["John","James","Jan","Jannie"];
-	//remember to use methods such as .json()...
-	res.json(req.params);
+
+/**
+	This function checks whether there is a session that exists with the user. If the 
+*/
+exports.test = function(req,res,next){
+	res.end('users);
 };
 

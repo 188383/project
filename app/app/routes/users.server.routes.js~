@@ -5,6 +5,10 @@
 	NB You must connect to the appropriate controller
 	remember to change actions appropriately and consider making the module much less
 	congested
+	
+	
+	This will be used to by the admins, who will be able to search users. 
+	delete users, suspend users. etc etc 
 */
 
 //note use a name that is representative of the controller 
@@ -12,55 +16,13 @@ var users = require('../controllers/users.server.controller.js');
 
 //export the routing mechanism 
 module.exports = function(app){
-	/*This method is here just to test the routing mechanism is working*/
-	app.route('/users').get(users.list).post(users.list);
+
+	/**
+		Users route. The base route for the users is empty, which 
+		should redirect users to the login page or help generate a login page if 
+		there is no user credentials or no session that was generated, otherwise try and 
+		and get the session key and check whether the user is logged in.
+	**/
+	app.route('/users').get();
 	
-	/* Control user login, if the user posts a get request for the login, then
-		The login page is displayed, alternatively if a post request is made, this is 
-		assumed to contain the details of the user that is attempting to log in
-	*/ 
-	app.route('/login')
-		.get(/*serve the login page*/)
-		.post(/*authenticate user and enter session*/);
-		
-	/*
-		The Log out route, this is used to terminate the current session of the user.
-		Destroy the session key and delete the cookie
-		
-	*/
-	app.route('/logout');
-	/*
-		User must first register before he/she can make any bookings. 
-		The user either requests the registrations form using a GET 
-		or uses POST to pass the data for verification by the server
-		consider how the AJAX version of this website will react when 
-		being filled in by a new user and user names and suggestions 
-	*/
-	
-	app.route('/register')
-		.get(/*serve the registration page*/)
-		.post(/*verify details and post link for confirmation*/);
-	
-	/*
-		The User attempts to make a booking, using either a GET request that routes 
-		to the booking form. This form is then filled in partly by the system with the details
-		of landlord to whom the message must go to and partly by the user him/herself when they 
-		make the booking
-		
-		alternatively 
-		The user posts details of the booking, that is the user lets the server 
-		verify the contents of the booking, the legitimacy of the request and 
-		the dates the user has decided to use. This will in turn pass the user on to the owner who
-		will then verify the booking and make sure the user has confirmed the booking via deposit.
-	*/	
-	app.route('/book/:userId')
-		.get(/*fill out booking form*/)
-		.post(/*Post the booking request to the server for prior confirmation*/);
-	
-	/*	
-		and update function that will allow users to update personal details.
-		The idea is to change the personal details of the user when needed. Such
-		as contact number, email etc	
-	*/
-	app.route('/user_update/:userId');
 };

@@ -80,38 +80,82 @@
 %explain the problems about the database design 
 %Mongo and it's advtanges and major disadvantages
 \begin{figure}
-\includegraphics[scale=0.3]{../img/drawing.jpg} 
+\includegraphics[scale=0.25]{../img/db.png} 
 \end{figure}
 
 \end{frame}
 
 \begin{frame}{Architecture}
 \begin{flushleft}
-	\textbf{Two Tiered Architecture(hopefully three)}
-		\begin{itemize}
-			\pause
-			\item Database server
-			\pause
-			\item application server and WWW server
-			%note a question on why not three tiered
-			%advantages of three tiered architecture
-		\end{itemize}
-	\textbf{Design Patterns}
+	\textbf{Three Tiered Architecture}
+	\pause
+	\begin{figure}
+	\includegraphics[scale=0.4]{3508f3.jpg} 
+	\caption{simplified 3-tiered architecture}
+	\end{figure}
+	
+\end{flushleft}
+\end{frame}
+
+\begin{frame}
+\textbf{Design Patterns}
+\pause
+\begin{figure}
+		\includegraphics[scale=0.4]{27.jpg} 
+		\end{figure}
 	\begin{itemize}
-		\pause
-		\item Model-View-Controller(MVC)
-		\pause
-		\item underlying design patterns thanks to framework
-		%explain why MVC 		
+		\item Model : Data to be presented/changed
+		\item View : How the data is presented to the client
+		\item Controller : interface between Model and View 
 	\end{itemize}
 	\textbf{Protocols and format}
 	\begin{itemize}
 		\pause
 		\item \textbf{Re}presentational \textbf{S}tate \textbf{T}ransfer%explain that HTTP is used and why not soap
 		\item HTTP(S) as the message exchange protocol  
-		
+		\item JSON as message format%explain HATEOAS principle
+		%Hypertext As The Engine Of Application State
 	\end{itemize}
-\end{flushleft}
+\end{frame}
+\begin{frame}{Technologies}
+	\begin{flushleft}
+	\textbf{MEAN}
+	\begin{itemize}
+		\pause
+		\item Mongo DB 	: Database 
+		\pause
+		\item Express JS : development framework
+		\pause
+		\item Angular JS : presentation (single page apps)
+		\pause
+		\item Node JS  : back-end 
+	\end{itemize}
+	\pause
+	\textbf{Additionally}
+		\begin{itemize}
+		\item OpenSSL%as a security feature
+		\item CSS%for display 
+		\end{itemize}
+	\textbf{caveats}\\
+	\pause
+	Mongo DB might be substituted for a SQL database \\
+	Angular JS might be substituted for EJS
+	\end{flushleft}
+\end{frame}
+
+\begin{frame}{TODO/Problems}
+	\textbf{TODO}\\
+		\begin{itemize}
+		\item API
+		\item WWW server(might not happen)
+		\end{itemize}
+	\textbf{Problems}
+	\begin{itemize}
+		\item document store database (Mongo)
+		\item relative anonymity
+		\item security
+		\item Graphical Interface
+	\end{itemize}
 \end{frame}
 
 \end{document}

@@ -1,0 +1,5 @@
+/**
+	This is the controller that handles bookings. What is a booking? 
+	A booking is the users attempt to allocate himself a room for a given 
+	period of time. The bookings panel is a kind of submission form 
+**/
