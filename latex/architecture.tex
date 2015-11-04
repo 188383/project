@@ -1,38 +1,76 @@
 \chapter{Project Design}
 
-In this section we demonstrate, using Unified Modeling Language(UML) notation, the conceptual model using  ''use cases'' diagrams(taking the functional requirements into account), The architecture of the System and database design using Class Diagrams and  Sequence Diagrams between key processes.(list and expand on the functional requirements there where necessary)
+In this chapter we list the functional requirements of the application with some rudimentary explanations. Using UML(Unified Modeling Language) to identify the users of the application, show possible use cases. Describe the architecture of the application as well as give a layout of the database design and what protocols will be used and why.
 \section{Functional Requirements}
 \begin{itemize}
-\item registration of admin and clients
-\item enable logging in and logging out 
-\item allow users(both admin and clients) to view dashboard
-\item allow clients to add/revoke a rental offer
-\item allow clients to add/remove details of rental offer
-\item allow clients to add/remove photos of offer
-\item allow admins to browse clients and client details
-\item allow admins to edit content of user
-\item allow users to browse offers based on criteria 
-\item allow users to make bookings and confirm bookings
-\item allow users to rate room based on criteria offered
-\item allow landlords to anonymously rate client
-\item allow users to edit personal details 
-\item create password resetting facilities
-\item allow basic content management
-\item create easy to use application programming interface(API)
+\item registration clients
+\item enable user logging in and logging out 
+\item client offer management - add, edit and remove an offer for a house rental
+\item user management - list registered clients and their personal details, revoke users, add users administratively 
+\item search function - search offer by set of criteria such as location, price availability 
+\item basic booking management - Allow landlords to view forthcoming reservations, confirm clients stay as well as allow clients to make bookings and view forth coming bookings
+\item rating mechanism - allow users to rate an offer based on a list of criteria as well as allow landlords to rate their clients stay. The rating system should mitigate discrimination.
+\item basic content management - add, edit and delete content of offers i.e photos
+\item create easy to use application programming interface(API)- API would allow users to access the service via front-ends other than a web browser i.e Smartphone app
 \end{itemize}
 \clearpage
 \section{Users, roles and use case}
 \begin{figure}[h!]
 \includegraphics[scale=0.3]{img/updated_use_case.jpg}
-\caption{details}
+\caption{Use case diagram}
 \end{figure}
-The project consists of two groups of users whom access and modify a database of information via a user interface. These users are:
+\subsection {User management}
 \begin{itemize}
-\item Administrator 
-\item Client(landlord and regular)
+\item[1.] User selects action to preform on Users table on intended user
+\item[2.] selecting create User a new screen appears:
+	\begin{itemize}
+		\item[a.] Admin enters details required
+		\item[b.] selects button to save 
+	\end{itemize}
+\item[3.] selecting edit User, admin is presented with user details and proceeds as in \textbf{2.2.2}
+\item[4.] selecing block, Admin is asked to confirm choice
+\item[5.] confirming choice blocks  selected from site
 \end{itemize}
 \newpage
+\subsection {User Content Management}
+\begin{itemize}
+\item[1.] User selects profile settings attribute
+\item[2.] List of user profile details is output to screen
+\item[3.] User selects edit under selected profile attribute i.e name.
+\item[4.] User enters new parameter for selected attribute
+\item[5.] User selects the save options to write the changes or cancel to ignore changes
+\end{itemize}
+
+\subsection {Offer Management}
+\begin{itemize}
+\item[1.] User selects the offers attribute 
+\item[2.] User selects search criteria i.e location and date
+\item[3.] A list of offers offers matching criteria output by system
+\item[4.] registered clients selects booking attribute 
+\item[5.] User enters booking details such arrival and departure dates
+\item[6.] User confirms booking by clicking the register attribute
+\end{itemize}
+\subsection {Booking Management}
+ \begin{itemize}
+		\item[1.] Admin/Owner(user) select edit offer attribute
+		\item[2.] user is presented with list of offer attributes
+		\item[3.] user selects attribute to edit or offer to revoke
+		\item[4.] user changes attribute accordingly if edit was selected
+		\item[6.] user selects appropriate confirmation or cancel to ignore action
+\end{itemize}
+\subsection {Opinion Rating}
+\begin{itemize}
+\item[1.] User selects the rating attribute  rental
+\item[2.] System outputs list of rating criteria onto screen
+\item[3.] User enters rating for each criteria
+\item[4.] User saves by confirming actions or cancels to forget
+\end{itemize}
 \section{Architecture}
+\subsection{Representational State Transfer(ReST)}
+\section{Class Diagrams}
 \section{Database Design}
 \section{Sequence Diagrams}
 \section{Protocols}
+\subsection*{Hypertext Transfer Protocol}
+\subsection*{Simple Mail Transfer Protocol}
+

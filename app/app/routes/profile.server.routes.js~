@@ -9,5 +9,10 @@
 var profile = require('../controllers/profile.server.controller.js');
 
 module.exports = function(app){
-	app.route('/profile').get();
+	app.route('/profile/:name').get(profile.test);
+	
+	app.param('name',function(req,res,next,name){
+		console.log(name);
+		res.end('done')
+	});
 }

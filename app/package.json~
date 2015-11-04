@@ -10,13 +10,13 @@
 		"method-override":"latest",
 		"express-session":"1.11.3",
 		"ejs":"2.3.4",
-		"mongodb":"~3.0.0",
+		"mongodb":"~2.0.0",
 		"mongoose":"latest"
 	},
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Pawel Otrebski 188383@student.pwr.edu.pl",
   "license": "MIT"
 }

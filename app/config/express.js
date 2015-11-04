@@ -25,8 +25,8 @@ var config = require('./config'),
 	compress = require('compression'),
 	bodyParser = require('body-parser'),
 	methodOverride = require('method-override'),
-	session = require('express-session');
-	
+	session = require('express-session'),
+	serveStatic = require('serve-static');
 
 /**
 	Set up the express application:
@@ -50,15 +50,21 @@ module.exports = function(){
 	app.use(bodyParser.json());
 	app.use(methodOverride());
 	
+	
+	//set up templating engine
+	app.set('views','./app/views');
+	app.set('view engine','ejs');
+	
 	//set the routing mechanism, this is modular so that angular can easily plug in angular
 	//note this calls the route context and passes instance of app into it.
+	require('../app/routes/index.server.routes.js')(app);
 	require('../app/routes/users.server.routes.js')(app);
 	require('../app/routes/bookings.server.routes.js')(app);
 	require('../app/routes/rooms.server.routes.js')(app);
 	require('../app/routes/profile.server.routes.js')(app);
-	require('../app/routes/index.server.routes.js')(app);
+	
 	//set the static content here, this is under routes for performance purposes
-	//app.use();
+	
 	return app;
 };
 

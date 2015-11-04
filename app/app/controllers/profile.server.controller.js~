@@ -10,6 +10,7 @@
 	'bookings' controller.
 **/
 
-module.test = function(req,res,next){
-	res.end('profile test');
+exports.test = function(req,res,next){
+	
+	next('profile test');
 }

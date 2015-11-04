@@ -1,8 +1,18 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Introduction}{2}
-\contentsline {section}{\numberline {1.1}Aim}{2}
+\contentsline {chapter}{\numberline {1}Business Analysis}{3}
+\contentsline {section}{\numberline {1.1}Problem}{3}
+\contentsline {section}{\numberline {1.2}Existing Solutions}{3}
 \contentsline {chapter}{\numberline {2}Project Design}{4}
 \contentsline {section}{\numberline {2.1}Functional Requirements}{4}
 \contentsline {section}{\numberline {2.2}Users, roles and use case}{5}
-\contentsline {section}{\numberline {2.3}Architecture}{6}
-\contentsline {section}{\numberline {2.4}System Database Design}{6}
+\contentsline {subsection}{\numberline {2.2.1}User management}{5}
+\contentsline {subsection}{\numberline {2.2.2}User Content Management}{6}
+\contentsline {subsection}{\numberline {2.2.3}Offer Management}{6}
+\contentsline {subsection}{\numberline {2.2.4}Booking Management}{6}
+\contentsline {subsection}{\numberline {2.2.5}Opinion Rating}{6}
+\contentsline {section}{\numberline {2.3}Architecture}{7}
+\contentsline {subsection}{\numberline {2.3.1}Representational State Transfer(ReST)}{7}
+\contentsline {section}{\numberline {2.4}Class Diagrams}{7}
+\contentsline {section}{\numberline {2.5}Database Design}{7}
+\contentsline {section}{\numberline {2.6}Sequence Diagrams}{7}
+\contentsline {section}{\numberline {2.7}Protocols}{7}

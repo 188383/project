@@ -11,5 +11,5 @@
 **/
 
 exports.test = function(req,res,next){
-	res.end('profile test');
+	next('profile test');
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<header>
+	The header for our application
+</header>
+<section>
+	Some section in the body that will allow us to do 'things'
+	<button id="button">Name</button>
+</section>
+<footer id="footer">
+	The Footer for our application
+</footer>
+<script>
+/**
+	This is the way the data is supposed to be sent to the server
+*/
+var obj = {
+	'id': 12345,
+	'name':'pawel',
+	'surname':'otrebski'
+};
+var t = document.getElementById("button");
+t.addEventListener('click',function(){
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', '/login');
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.setRequestHeader('Type', 'file');
+	xhr.send(JSON.stringify(obj));
+});
+
+
+</script>
+</body>
+</html>

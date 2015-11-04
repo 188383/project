@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<header>
+	Header
+</header>
+<section>
+	 <form action="/login" method="POST">
+  First name:<br>
+  <input type="text" name="username">
+  <br>
+  Last name:<br>
+  <input type="password" name="password">
+  <br>
+  <input id="bt" type="submit" value="Submit">
+</form>
+</section>
+<footer>
+ 	Footer
+</footer>
+<script>
+	var submit = document.getElementById("bt");
+	/*submit.addEventListener('click',function(event){
+		event.preventDefault();
+		var xml = new XMLHttpRequest();
+		xml.open('POST','/login','true');
+
+		xml.overrideMimeType("Content-Type","application/x-from-url-encode");
+		xml.onreadystatechange = function() {
+  if (xml.readyState == 4 && xml.status == 200) {
+    console.log(xml);
+  }
+}
+		xml.send("check");
+	});*/
+</script>
+</body>
+</html>
