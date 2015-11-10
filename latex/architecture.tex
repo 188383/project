@@ -16,7 +16,7 @@ In this chapter we list the functional requirements of the application with some
 \clearpage
 \section{Users, roles and use case}
 \begin{figure}[h!]
-\includegraphics[scale=0.3]{img/updated_use_case.jpg}
+\includegraphics[scale=0.25]{img/updated_use_case.jpg}
 \caption{Use case diagram}
 \end{figure}
 \subsection {User management}
@@ -24,19 +24,26 @@ In this chapter we list the functional requirements of the application with some
 \item[1.] User selects action to preform on Users table on intended user
 \item[2.] selecting create User a new screen appears:
 	\begin{itemize}
-		\item[a.] Admin enters details required
-		\item[b.] selects button to save 
+		\item[a.] Admin enters details required to create user
+		\item[b.] selects save option to save user or cancel to forget data
 	\end{itemize}
-\item[3.] selecting edit User, admin is presented with user details and proceeds as in \textbf{2.2.2}
-\item[4.] selecing block, Admin is asked to confirm choice
-\item[5.] confirming choice blocks  selected from site
+\item[3.] selecting edit User, admin is presented with user details and proceeds as in \textbf{User Content Management}
+\item[4.] selecting block
+	\begin{itemize}
+	\item[a.] Admin adds reason for blocking user
+	\item[b.] confirms the block by selecting the save option
+	\end{itemize}
+\item[5.] Selecting unblock:
+	\begin{itemize}
+		\item[a.] Admin enters reason for unblocking user
+		\item[b.] Selects the save option to confirm or cancel to forget action	
+	\end{itemize}
 \end{itemize}
-\newpage
 \subsection {User Content Management}
 \begin{itemize}
 \item[1.] User selects profile settings attribute
 \item[2.] List of user profile details is output to screen
-\item[3.] User selects edit under selected profile attribute i.e name.
+\item[3.] User selects edit under selected profile attribute i.e name,surname,identity etc
 \item[4.] User enters new parameter for selected attribute
 \item[5.] User selects the save options to write the changes or cancel to ignore changes
 \end{itemize}
@@ -44,11 +51,37 @@ In this chapter we list the functional requirements of the application with some
 \subsection {Offer Management}
 \begin{itemize}
 \item[1.] User selects the offers attribute 
-\item[2.] User selects search criteria i.e location and date
-\item[3.] A list of offers offers matching criteria output by system
-\item[4.] registered clients selects booking attribute 
-\item[5.] User enters booking details such arrival and departure dates
-\item[6.] User confirms booking by clicking the register attribute
+\item[2.] User forwarded to search criteria page 
+\item[3.] User is presented with options: Search,Add,Remove,Edit
+\item[4.] User selects Search option:
+	\begin{itemize}
+		\item[a.] User presented with 'search bar' by system
+		\item[b.] User enters search criteria: location of stay i.e city,town etc, date of arrival, date of departure, price range
+		\item[c.] results output to screen
+		\item[d.] selects offer of choice
+		\item[e.] User presented with details of offer as entered by owner of the offer
+		\item[f.] User proceeds to make booking as under \textbf{Booking Management}
+	\end{itemize}
+\item[5.]User selects Add option:
+	\begin{itemize}
+		\item[a.] System outputs a new options page
+		\item[b.] User fills in offer details including : location of offer, number of people, price per night, additional options such as kitchen, bathroom, separate entrance etc
+		\item[c.] User adds photos of the room on offer
+		\item[d.] User saves the offer or presses cancel to forget
+	\end{itemize}
+\item[6.] User selects Remove option:
+	\begin{itemize}
+		\item[a.] User asked to confirm removal
+		\item[b.] User confirms removal
+		\item[c.] Offer removed from list of offers
+	\end{itemize}
+\item[7.] User selects Edit option:
+	\begin{itemize}
+		\item[a.] User presented with properties of offer
+		\item[b.] User selects property intended for editing
+		\item[c.] User enters new parameters for selected property
+		\item[d.] User selects save to confirm changes or cancel to drop changes
+	\end{itemize}
 \end{itemize}
 \subsection {Booking Management}
  \begin{itemize}

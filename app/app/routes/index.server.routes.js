@@ -13,24 +13,31 @@
 var index = require('../controllers/index.server.controller.js');
 
 module.exports = function(app){
-	app.route('/').get(function(req,res,next){res.redirect('/home');});
-	/**handle the route that specifies the home resource
-		The routes that have functions declared in the callback section should be changed
-		such that the callbacks should be kept in the controller function
-	*/
-	app.route('/home').get(index.home);
-	//handle the route that specifies the login resource
-	app.route('/login')
-		.get(index.home)
-		.post(function(req,res){
-				console.log(req.headers);
-				console.log(req.body);
-				res.end();
-		});
-	//handle the route for loggin a user out and destroying the session
-	//app.route('/logout').get('log out and redirect to the home page');
-	//handle the route that specifies the register resource
-	app.route('/register').get(function(req,res,next){'Return the registration form'});
-	//handle the route that specifies the about resource
-	app.route('/about').get(function(req,res,next){res.end('the about page')});
+
+	app.route('/').get(function(req,res,next){
+		res.redirect('/home');
+		res.end();
+	});
+
+	app.route('/home').get(function(req,res,next){
+		res.render('index');
+		res.end();
+	});
+
+	app.route('/search').get(function(req,res,next){
+		var users = require('../classes/dummy');
+		res.send(req.query);
+	});
+
+	app.route('/about').get(function(req,res,next){
+		res.render('about');
+		res.end();
+	});
+
+	app.route('/signup').get(function(req,res,next){
+		res.render('signup');
+		res.end();
+	});
+//find the userid paramater and insert into the file
+//	app.param('userid',index.userById);
 }

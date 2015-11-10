@@ -8,8 +8,8 @@
 \contentsline {subsection}{\numberline {2.2.1}User management}{5}
 \contentsline {subsection}{\numberline {2.2.2}User Content Management}{6}
 \contentsline {subsection}{\numberline {2.2.3}Offer Management}{6}
-\contentsline {subsection}{\numberline {2.2.4}Booking Management}{6}
-\contentsline {subsection}{\numberline {2.2.5}Opinion Rating}{6}
+\contentsline {subsection}{\numberline {2.2.4}Booking Management}{7}
+\contentsline {subsection}{\numberline {2.2.5}Opinion Rating}{7}
 \contentsline {section}{\numberline {2.3}Architecture}{7}
 \contentsline {subsection}{\numberline {2.3.1}Representational State Transfer(ReST)}{7}
 \contentsline {section}{\numberline {2.4}Class Diagrams}{7}

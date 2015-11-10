@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="css/w3.css">
+	<!--<link rel="stylesheet" href="css/custom.css"-->
 </head>
 <body>
-<header>
-	The header for our application
+<header class="w3-xlarge w3-container w3-cyan w3-image">
+	<h1>The application header</h1>
+	<h3>with a sub-heading</h3>
 </header>
-<section>
-	Some section in the body that will allow us to do 'things'
-	<button id="button">Name</button>
-</section>
-<footer id="footer">
+<!--
+	This is the view that will be templated from the angular js side.
+	This will speed up development.
+	<div ng-view>
+
+	</div>
+-->
+<footer class="w3-small w3-container w3-cyan">
 	The Footer for our application
 </footer>
 <script>
 /**
 	This is the way the data is supposed to be sent to the server
 */
+/*
 var obj = {
 	'id': 12345,
 	'name':'pawel',
@@ -31,7 +38,7 @@ t.addEventListener('click',function(){
 	xhr.send(JSON.stringify(obj));
 });
 
-
+*/
 </script>
 </body>
 </html>

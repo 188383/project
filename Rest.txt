@@ -1,0 +1,24 @@
+/home
+	all details that are required when loading the home page
+
+/about
+	all details pertaining to the actual website
+		
+/login
+	the login url, which activates or creates a new session
+
+/search
+	the search url and the terms of the search
+
+/logout
+	the logout url which destroys the current session  
+
+/register
+	the registration uri which is used to register a user
+
+/users
+	the users uri which then sub groups to a concrete user and their profile
+
+/offers
+	the offers uri and the concrete offer we are searching for
+	
