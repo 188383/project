@@ -25,8 +25,11 @@ var config = require('./config'),
 	compress = require('compression'),
 	bodyParser = require('body-parser'),
 	methodOverride = require('method-override'),
-	session = require('express-session'),
-	serveStatic = require('serve-static');
+//	session = require('express-session'),
+	session = require('client-sessions'),
+	cookieparser = require('cookie-parser'),
+	serveStatic = require('serve-static'),
+	User = require('./sequelize').User;
 
 /**
 	Set up the express application:
@@ -46,10 +49,24 @@ module.exports = function(){
 	}
 
 	//modules to use regardless of the environment set above
+	app.use(session({
+  cookieName: 'user_authentication',
+  secret: 'random_string_goes_here',
+  duration: 1000*60*2,
+  activeDuration:1000*60*2
+	}));
 	app.use(bodyParser.urlencoded({extended:true}));
 	app.use(bodyParser.json());
 	app.use(methodOverride());
-
+	/*
+		create a session and then verify the user
+	*/
+	app.use(function(req,res,next){
+		if(req.session){
+			console.log(req.session);
+		}
+		next();
+	});
 
 	//set up templating engine
 	app.set('views','./app/views');
@@ -63,6 +80,7 @@ module.exports = function(){
 	require('../app/routes/rooms.server.routes.js')(app);
 	require('../app/routes/profile.server.routes.js')(app);
 	//set the static content here, this is under routes for performance purposes
-	app.use(express.static('./static'));
+	app.use(express.static('./public'));
+
 	return app;
 };

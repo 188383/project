@@ -11,7 +11,6 @@
 **/
 
 var index = require('../controllers/index.server.controller.js');
-
 module.exports = function(app){
 
 	app.route('/').get(function(req,res,next){
@@ -19,25 +18,27 @@ module.exports = function(app){
 		res.end();
 	});
 
-	app.route('/home').get(function(req,res,next){
-		res.render('index');
-		res.end();
-	});
+	app.route('/home')
+	.get(index.home);
 
-	app.route('/search').get(function(req,res,next){
-		var users = require('../classes/dummy');
-		res.send(req.query);
-	});
+	app.route('/search')
+	.get(index.search);
 
-	app.route('/about').get(function(req,res,next){
-		res.render('about');
-		res.end();
-	});
+	app.route('/about')
+	.get(index.about);
 
-	app.route('/signup').get(function(req,res,next){
-		res.render('signup');
-		res.end();
-	});
+	app.route('/signup')
+	.get(index.signupForm).post(index.signupData);
+
+	/*add login function here*/
+
+	app.route('/login').get(function(req,res){
+		res.render('login');
+	}).post(index.login);
+
+	/*app.route('/*').get(function(req,res){
+		res.send('random_string');
+	});*/
 //find the userid paramater and insert into the file
 //	app.param('userid',index.userById);
 }

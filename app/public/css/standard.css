@@ -1,0 +1,32 @@
+@media screen and (min-height:200px){
+	#map{
+		height:200px;
+	}
+}
+
+@media screen and (min-height:480px){
+		#map{
+			height:480px;
+		}
+}
+
+@media screen and (min-height:640px){
+	#map{
+		height:640px;
+	}
+
+}
+
+@media screen and (min-height:1024px){
+	#map{
+		height: 800px;
+	}
+	
+}
+	
+	#search-elements>*{
+		height:25px;
+	}	
+	nav{
+		display:none;
+	}

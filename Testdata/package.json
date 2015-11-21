@@ -1,0 +1,16 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "sd;lgkjsdf",
+  "main": "server.js",
+  "dependencies":{
+  	"sequelize":"latest",
+  	"sqlite3":"latest"
+  },
+  "scripts": {
+    "test": "sdfs",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

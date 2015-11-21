@@ -10,12 +10,16 @@
 		"method-override":"latest",
 		"express-session":"1.11.3",
 		"ejs":"2.3.4",
-		"serve-static":"latest"
+		"serve-static":"latest",
+    "sqlite3":"latest",
+    "sequelize":"latest",
+    "client-sessions":"latest",
+    "nodemailer":"latest"
 	},
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Pawel Otrebski 188383@student.pwr.edu.pl",
+  "author": "188383@student.pwr.edu.pl",
   "license": "MIT"
 }
