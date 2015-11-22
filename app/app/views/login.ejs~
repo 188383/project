@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+	<% include partials/head.ejs %>
 </head>
-<body>
-<header>
-	Header
-</header>
-<section>
-	 <form action="/login" method="POST">
-  First name:<br>
-  <input type="text" name="username">
-  <br>
-  Last name:<br>
-  <input type="text" name="password">
-  <br>
-  <input id="bt" type="submit" value="Submit">
-</form> 
-</section>
+<body class="w3-blue w3-animate-opacity">
+<header class="w3-row">
+  		<div class="w3-col m12 l12">
+		<% include partials/header.ejs %>
+	</div>
+
+	</nav>
+  	</header>
+ <section id="main-section" class="w3-container">
+    	<div class="w3-card-8 w3-row w3-margin-64">
+    	<form class="w3-form w3-center" action="/signup" method="post">
+    		<div class="w3-input-group w3-row">
+    			<label class="w3-label w3-text-white">email</label>
+    			<input id="email_text" name="email" class="w3-input" type="email">
+    		</div>
+    		<br/>
+    		<div class="w3-input-group w3-row">
+    			<label class="w3-label w3-text-white">password</label>
+    			<input class="w3-input" name="password" type="password" >
+    		</div>
+    		<div class="w3-row">
+    			<button class="w3-btn w3-border w3-indigo w3-left">login</button>
+    		</div>
+   		</form>
+   		</div>
+   </section>
 <footer>
  	Footer
 </footer>
 <script>
 	var submit = document.getElementById("bt");
-	submit.addEventListener('click',function(event){
+	/*submit.addEventListener('click',function(event){
 		event.preventDefault();
 		var xml = new XMLHttpRequest();
 		xml.open('POST','/login','true');
@@ -35,7 +46,7 @@
   }
 }
 		xml.send("check");
-	});
+	});*/
 </script>
 </body>
 </html>

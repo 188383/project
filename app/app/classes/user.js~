@@ -111,13 +111,7 @@ User.prototype.getConfirmed = function(){
 }
 
 User.prototype.verifyUser = function(hashed){
-	var string = this.salt+this.password+this.salt;
-	var pass = this.hashObject(string);
-	if(hashed === pass){
-		return {error:false};
-	}else{
-		return {error:true};
-	}
+
 }
 
 

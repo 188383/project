@@ -17,7 +17,7 @@ var sequelize = require('./config/sequelize'),
 */
 var db = sequelize;
 var app = express();
-db.sync().then(function(){
+db.sync({force:true}).then(function(){
 		console.log('done');
 		app.listen(4500);
 

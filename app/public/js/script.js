@@ -28,3 +28,10 @@ $(function(){
 /**
 	Add the navigation for the menu 
 **/
+
+
+/**
+	submit button, make a verification 
+**/
+
+

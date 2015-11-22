@@ -15,6 +15,12 @@
 */
 module.exports = function(sequelize,datatypes){
 	var User = sequelize.define('User',{
+		id:{
+			type:datatypes.INTEGER,
+			primaryKey:true,
+			autoIncrement:true,
+			allowNull:false
+		},
 		email:{
 			type:datatypes.STRING,
 			allowNull:false,
@@ -31,6 +37,22 @@ module.exports = function(sequelize,datatypes){
 			type:datatypes.BIGINT,
 			allowNull: false,
 			field: 'salt'
+		},
+		confirmed:{
+			type:datatypes.BOOLEAN,
+			allowNull:false,
+			defaultValue: false,
+			field:'confirmed'
+		},
+		confirmationUrl:{
+			type:datatypes.STRING,
+			allowNull:false,
+			field:'confirmationUrl'
+		},
+		url:{
+			type:datatypes.STRING,
+			defaultValue:null,
+			field:'url'
 		}
 	},{
 		freezeTableName: true,

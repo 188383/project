@@ -6,13 +6,7 @@
 
   <body class="w3-blue w3-animate-left">
     <header class="w3-row">
-    	<div class="w3-col m8 l8">
-		<% include partials/header.ejs %>
-	</div>
-	<nav class="w3-topnav w3-indigo w3-col s12 m4 l4">
-		<a class="w3-right w3-small" href="<%= link %>"><%= name %></a>
-		<a class="w3-right w3-small" href="<%= link2 %>"><%= name2 %></a>
-	</nav>
+    	<% include partials/header.ejs%>
     </header>
     <section id="main-section" class="w3-container">
     	<p>some content</p>

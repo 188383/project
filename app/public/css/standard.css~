@@ -1,19 +1,52 @@
 @media screen and (min-height:200px){
 	#map{
-		height:200px
+		height:200px;
+	}
+	
+	#main-section:{
+		height:200px;
+	}
+	
+	body{
+		padding-bottom:0%;
+		max-height:400px;	
 	}
 }
 
-@media screen and (min-height:480px){
+@media screen and (min-height:300px){
 		#map{
 			height:480px;
 		}
+		
+		#main-section:{
+			height:480px;
+		}
+		
+		body{
+		padding-bottom:0%;
+		max-height:680px;	
+	}
+		
+		
 }
 
 @media screen and (min-height:640px){
 	#map{
 		height:640px;
 	}
+	
+	#main-section:{
+		height:640px;
+	}
+	
+	body{
+		
+		max-height:840px;	
+	}
+	
+	/*nav{
+		display:inline;
+	}*/
 
 }
 
@@ -22,11 +55,37 @@
 		height: 800px;
 	}
 	
+	#main-section:{
+		height:800px;
+	}
+	
+	body{
+		padding-bottom:0%;
+		max-height:1200px;	
+	}
+	
 }
 	
 	#search-elements>*{
 		height:25px;
 	}	
-	nav{
-		display:none;
+	
+	body{
+		padding-bottom:100%;
 	}
+	
+	header>*{
+		height:38.5px;
+	}
+	
+	form>*{
+		color:black;
+	}
+	
+	footer{
+		min-height:30px;
+		max-height:400px;
+	}
+	
+	
+	

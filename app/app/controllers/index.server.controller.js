@@ -16,6 +16,7 @@
 var sequelize = require('../../config/sequelize');
 var fs = require('fs');
 var crypto = require('crypto');
+var User = require('../classes/user');
 /**
 	This function adds the users profile pages to
 	the fs
@@ -27,8 +28,10 @@ exports.home = function(req,res,next){
 		Here, as in other functions we add a user authentication
 		to check what data to render to the screen of the user
 	*/
-
-	res.render('index');
+	
+	//add checking for the cookie and whether user is logged in.
+	
+	res.render('index',{link:"/login", name:"login",link2:"/signup",name2:"signup"});
 	res.end();
 }
 
@@ -47,12 +50,25 @@ exports.about = function(req,res,next){
 		This is the about page and the page variables are not
 		really essential here
 	*/
-	res.render('about');
+	var data = {};
+	if(req.user_authentication){
+		data['link'] = '/logout';
+		data['name'] = 'logout';
+		data['link2'] = '#';
+		data['name2'] = 'profile';
+	}else{
+		data['link'] = '/login';
+		data['name'] = 'login';
+		data['link2'] = '/signup';
+		data['name2'] = 'signup';
+	}
+	
+	res.render('about',data);
 	res.end();
 }
 
 exports.signupForm = function(req,res,next){
-	res.render('signup');
+	res.render('signup',{link:"/login", name:"login",link2:"/signup",name2:"signup"});
 	res.end();
 }
 
@@ -63,69 +79,53 @@ exports.signupForm = function(req,res,next){
 **/
 
 exports.signupData = function(req,res,next){
-	var User = sequelize.User;
+
+	/*var User = sequelize.User;*/
 	var __email = req.body.email;
 	var __password = req.body.password;
-	var __salt = Date.now();
-	var passWordString = __salt + __password + __salt;
-
-	var hashsum = crypto.createHash('sha512');
-	hashsum.update(passWordString);
-	var digest = hashsum.digest('hex');
-
-	var user = User.create({
-		email:__email,
-		password:digest,
-		salt:__salt
-	})
-	.then(function(user){
-		/*
-			create user content directory
-		*/
-		fs.mkdir('content/'+__email,function(err){
-			if(err){
-				console.log(err);
-				throw err;
-			}else{
-				console.log(user)
-				res.redirect('/');
-			}
-		});
-	}).error(function(err){
-			console.log(err);
-		});
+	var user = new User(__email,__password);
+	var success = user.persistUser();
+	var directory
+	if(success){
+		res.render('index',{link:"/signup",name:"signup",link2:"/login",name2:"login"});
+	}else{
+		console.log(success);
+		res.redirect('/login');
+	}
+	
+	
 }
 /*
 	Need to add error handling for wrong password and email
 	combination.
 */
 exports.login = function(req,res,next){
-	var User = sequelize.User;
+	var SUser = sequelize.User;
 	var __email = req.body.email;
 	var __password = req.body.password;
-
-	User.findOne({
+	var client = new User();
+	var dataobject = null;
+	SUser.findOne({
 		where:{
 			email:req.body.email
 		},
-		attributes:['id','email','password','salt']
+		attributes:['id','email','password','salt','confirmed','url']
 	}).then(function(user){
-
+		var verified;
 		if(!user){
 				res.redirect('/login');
 		}else{
-			var hashsum = crypto.createHash('sha512');
-			var __salt = user.salt;
-			var digestString = __salt + __password + __salt;
-			hashsum.update(digestString);
-			var digest = hashsum.digest('hex');
-
-			if(user.password === digest){
-					res.redirect('/home');
-			}else{
-				res.redirect('/login');
-			}
-
+			dataobject = user;
+			client.setSalt(user.salt);
+			client.setPassword(__password);
+			verified = client.verifyUser(user.password);
+			
+		}
+		if(!verified.error){
+			req.user_authentication.username = dataobject.email;
+			res.render('index',{link:"#",name:"profile",link2:"/logout",name2:"logout"});
+		}else{
+			res.json(verified);
 		}
 	});
 }

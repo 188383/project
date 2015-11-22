@@ -11,4 +11,5 @@ var db = new Sequelize('database',null,null,{
 });
 
 db.User = db.import('../app/models/users.server.model');
+db.UserLinks = db.import('../app/models/userlink.server.model');
 module.exports = db;

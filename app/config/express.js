@@ -50,10 +50,9 @@ module.exports = function(){
 
 	//modules to use regardless of the environment set above
 	app.use(session({
-  cookieName: 'user_authentication',
-  secret: 'random_string_goes_here',
-  duration: 1000*60*2,
-  activeDuration:1000*60*2
+  		cookieName: 'user_authentication',
+  		secret: 'random_string_goes_here',
+  		duration: 1000*60*60
 	}));
 	app.use(bodyParser.urlencoded({extended:true}));
 	app.use(bodyParser.json());
@@ -61,12 +60,14 @@ module.exports = function(){
 	/*
 		create a session and then verify the user
 	*/
-	app.use(function(req,res,next){
-		if(req.session){
-			console.log(req.session);
-		}
-		next();
-	});
+	//app.use(function(req,res,next){
+		//if(req.user_authentication){
+		//	console.log(req.user_authentication);
+		//	res.render('index',{link:"#",name:"profile",link2:"/logout",name2:"logout"});
+		//}else{
+		//	next();
+		//}
+	//});
 
 	//set up templating engine
 	app.set('views','./app/views');

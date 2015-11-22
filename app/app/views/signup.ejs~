@@ -27,6 +27,7 @@
     		</div>
     		<div class="w3-row">
     			<button class="w3-btn w3-border w3-indigo w3-left">signup</button>
+    			<button class="w3-btn w3-border w3-indigo w3-left">cancel</button>
     		</div>
    		</form>
    		</div>

@@ -1,44 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-	<!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
-  	<link rel="stylesheet" href="ui/jquery-ui.css"></link>
-  	<script src="ui/external/jquery/jquery.js"></script>
-  	<script src="ui/jquery-ui.js"></script>
-	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"></link>
-	<link rel="stylesheet" href="css/standard.css"></link>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<script src="/js/script.js"></script>
+	
+	<% include partials/head.ejs %>
 </head>
 
-<body class="w3-cyan w3-animate-opacity">
-
+<body class="w3-blue w3-animate-opacity w3-margin-0">
 <header class="w3-row">
-	
-	<nav class="w3-topnav w3-indigo w3-col s12 m12 l12">
-		<a href="/home">home</a>
-		<a class="w3-right" href="/about">about</a>
+	<div class="w3-col m8 l8">
+		<% include partials/header.ejs %>
+	</div>
+	<nav class="w3-topnav w3-indigo w3-col s12 m4 l4">
+		<a class="w3-right w3-small" href="<%= link %>"><%= name %></a>
+		<a class="w3-right w3-small" href="<%= link2 %>"><%= name2 %></a>
 	</nav>
-	
 </header>
-
 
 <section class="w3-container w3-center">
 
-	<div id="search-elements" class="w3-row w3-padding-4 w3-medium">
+	<div id="search-elements" class="w3-row w3-margin-8 w3-medium">
 		
-		<input class="w3-input w3-container w3-col s12 m6 l6" type="text"
+		<input class="w3-input w3-container w3-col s12 m6 l6 w3-text-black" type="text"
 		 name="search" placeholder="search"></input>
 		 
 		 <input id="dateFrom" type="text" 
-		 	class="w3-col s6 m2 l2"
+		 	class="w3-col s6 m2 l2 w3-text-black"
 		 	name="dateFrom"></input>
 		 	
 		 <input id="dateTo" type="text" 
-		 	class="w3-col s6 m2 l2
+		 	class="w3-col s6 m2 l2 w3-text-black"
 		 	name="dateTo"></input>
 		
 		<button id="search-button" class="w3-btn w3-indigo w3-container
@@ -46,21 +36,13 @@
 	</div>
 	
 	<div id="map" class="w3-content"></div>
-	
 </section>
-<!--<footer class="w3-small w3-container w3-cyan">
-	The Footer for our application
-</footer>-->
+
+<footer class="w3-small w3-container w3-indigo">
+	<% include partials/footer.ejs %>
+</footer>
 	<script type="text/javascript" src="js/maps.js">
-/**
-var map;
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 8
-  });
-}
-**/
+		
     </script>
 <script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAbfKFIJvNNI6kutr_cDzYy5he0ysyHGVQ&callback=initMap"></script>
 </body>

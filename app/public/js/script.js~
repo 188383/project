@@ -24,3 +24,12 @@ t.addEventListener('click',function(){
 $(function(){
 	$("#dateFrom,#dateTo").datepicker();
 });
+
+/**
+	Add the navigation for the menu 
+**/
+
+
+/**
+	submit button, make a verification 
+**/

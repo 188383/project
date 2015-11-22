@@ -33,8 +33,17 @@ module.exports = function(app){
 	/*add login function here*/
 
 	app.route('/login').get(function(req,res){
-		res.render('login');
+		res.render('login',{});
 	}).post(index.login);
+
+	app.route('/logout').get(function(req,res){
+		req.user_authentication.reset();
+		res.render('index',{link:"/signup",name:"signup",link2:"/login",name2:"login"})
+	});	
+		
+	app.route('/register/*').get(function(req,res){
+			
+	});
 
 	/*app.route('/*').get(function(req,res){
 		res.send('random_string');
