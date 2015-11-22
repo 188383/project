@@ -33,3 +33,33 @@ $(function(){
 /**
 	submit button, make a verification 
 **/
+
+
+
+
+$(function(){
+	var nav = $('#nav-bar');
+	var crossicon = $('#menu-close');
+	var baricon = $('#menu-icon');
+	baricon.click(function(){
+		if(baricon.hasClass('w3-show')){
+			baricon.addClass('w3-animate-opacity');
+			baricon.addClass('w3-hide');
+			baricon.removeClass('w3-show');
+			nav.removeClass('w3-hide');
+			nav.addClass('w3-show');
+		}
+	});
+	
+	crossicon.click(function(){
+		if(nav.hasClass('w3-show'){
+			nav.removeClass('w3-show');
+			nav.addClass('w3-hide');
+			baricon.removeClass('w3-hide');
+			baricon.addClass('w3-show');
+		
+		}
+	});
+});
+
+

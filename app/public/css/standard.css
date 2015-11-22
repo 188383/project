@@ -82,6 +82,20 @@
 		color:black;
 	}
 	
+	#main-section{
+		margin-bottom:25px;
+	}
+	
+	#menu-close,#menu-icon{
+		cursor:pointer;
+	}
+	
+
+	#link,#link2,#menu-close{
+		text-decoration:none;
+		line-height:38px;
+	}
+	
 	
 	
 	

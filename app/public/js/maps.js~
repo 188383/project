@@ -14,7 +14,7 @@ function initMap() {
 function placeMarkerOnMap(latLng,map){
 	 // 3 seconds after the center of the map has changed, pan back to the
     // marker.
-     var variables = {position:e.latLng,map:map};
+     var variables = {position:latLng,map:map};
    	 var marker = new google.maps.Marker(variables);
 }
 

@@ -1,6 +1,8 @@
-<nav class="w3-topnav w3-indigo w3-col s12 m12 l12">
+<nav class="w3-topnav w3-indigo">
 		<a href="/home">home</a>
 		<a href="/about">about</a>
-		
+		<a href="#">FAQ</a>
+		<a href="#">FAQ</a>
+		<a href="#">FAQ</a>
 </nav>
 	

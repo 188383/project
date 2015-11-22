@@ -61,7 +61,7 @@
 	
 	body{
 		padding-bottom:0%;
-		max-height:1200px;	
+		max-height:1024px;	
 	}
 	
 }
@@ -82,10 +82,20 @@
 		color:black;
 	}
 	
-	footer{
-		min-height:30px;
-		max-height:400px;
+	#main-section{
+		margin-bottom:25px;
 	}
+	
+	#menu-close,#menu-icon{
+		cursor:pointer;
+	}
+	
+
+	/*#link,#link2,#menu-close*/#right-menu{
+		text-decoration:none;
+		line-height:38px;
+	}
+	
 	
 	
 	

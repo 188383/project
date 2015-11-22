@@ -5,18 +5,24 @@
 	<% include partials/head.ejs %>
 </head>
 
-<body class="w3-blue w3-animate-opacity w3-margin-0">
+<body class="w3-indigo w3-animate-opacity w3-margin-0">
 <header class="w3-row">
-	<div class="w3-col m8 l8">
+	<i id="menu-icon" class="w3-show material-icons w3-col s1 m2 l2 w3-xxlarge">view_headline</i>
+	<div id="nav-bar" class="w3-hide">
+	<div class="w3-col w3-left s6 m6 l6">
 		<% include partials/header.ejs %>
+	</div id="right-menu" >
+	<div class="w3-col s6 m6 l6">
+	<i id="menu-close" class="material-icons w3-right">highlight_off</i>
+	<a id="link" class="w3-small w3-margin-4 w3-right" href="<%= link %>"><%= name %></a>
+	
+	<a id="link2" class="w3-small w3-margin-4 w3-right" href="<%= link2 %>"><%= name2 %></a>		
+	
+	<div>
 	</div>
-	<nav class="w3-topnav w3-indigo w3-col s12 m4 l4">
-		<a class="w3-right w3-small" href="<%= link %>"><%= name %></a>
-		<a class="w3-right w3-small" href="<%= link2 %>"><%= name2 %></a>
-	</nav>
 </header>
 
-<section class="w3-container w3-center">
+<section id="main-section" class="w3-container w3-center w3-blue">
 
 	<div id="search-elements" class="w3-row w3-margin-8 w3-medium">
 		
